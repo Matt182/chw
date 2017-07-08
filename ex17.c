@@ -33,10 +33,14 @@ void die(const char *message)
 	exit(1);
 }
 
+struct Connection *conn;
+
 void Address_print(struct Address *addr)
 {
+	Database_close(conn);
 	printf("%d %s %s\n", addr->id, addr->name, addr->email);
 }
+
 
 void Database_load(struct Connection *conn)
 {
@@ -143,7 +147,7 @@ int main(int argc, char *argv[])
 
 	char *filename = argv[1];
 	char action = argv[2][0];
-	struct Connection *conn = Database_open(filename, action);
+	conn = Database_open(filename, action);
 	int id = 0;
 	
 	if (argc > 3) id = atoi(argv[3]);
