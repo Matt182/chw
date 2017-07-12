@@ -1,0 +1,3 @@
+/vagrant/chw/ex1/test1.txt
+/vagrant/chw/ex1/test2.txt
+/vagrant/chw/ex1/test3.txt
